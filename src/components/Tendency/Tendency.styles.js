@@ -4,6 +4,8 @@ import { css } from "styled-components";
 export const Wrapper = styled.div`
 	display: flex;
 	padding: 0;
+	height: fit-content;
+	width: fit-content;
 `;
 
 export const Icon = styled.div`
@@ -13,6 +15,7 @@ export const Icon = styled.div`
 
 export const Value = styled.p`
 	font-size: 10px;
+	font-weight: 700;
 	color: var(--color-primary-lime-green);
 	margin: 0;
 	align-self: flex-end;

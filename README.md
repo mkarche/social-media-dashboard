@@ -47,6 +47,15 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+- Cleaning Default React App files
+- Structuring the document
+- Setting up the gh pages deployment
+- Defining CSS variables
+- Creating utilities functions (responsive)
+- Sketching and Organizing the design
+- Creating and Styling components
+- Structuring and Styling the page
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -59,24 +68,37 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### Creating card borders with linear-gradient color.
 
-To see how you can add code snippets, see below:
+I learned how to create a box borders with linear-gradient color.
+By overlapping two div:
+
+- one outter div with the linear-gradient background and a relative position with a padding
+- one inner div
+
+Example of Code as below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="border-wrap">
+	<div class="wrapper">Content</div>
+</div>
 ```
 
 ```css
-.proud-of-this-css {
-	color: papayawhip;
+.border-wrap {
+	position: relative;
+	padding-top: 0.3rem;
+	border-radius: 5px;
+	background: linear-gradient(
+		to right,
+		hsl(37, 97%, 70%) 0%,
+		hsl(329, 70%, 58%) 100%
+	);
 }
-```
 
-```js
-const proudOfThisFunc = () => {
-	console.log("🎉");
-};
+.wrapper {
+	background: gray;
+}
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
