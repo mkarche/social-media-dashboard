@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { css } from "styled-components";
 
 export const BorderWrapper = styled.div`
 	position: relative;
@@ -8,19 +7,19 @@ export const BorderWrapper = styled.div`
 	background: ${({ social }) => {
 		switch (social) {
 			case "facebook":
-				return css`var(--color-primary-facebook)`;
+				return "var(--color-primary-facebook)";
 
 			case "instagram":
-				return css`var(--color-primary-instagram)`;
+				return "var(--color-primary-instagram)";
 
 			case "twitter":
-				return css`var(--color-primary-twitter)`;
+				return "var(--color-primary-twitter)";
 
 			case "youtube":
-				return css`var(--color-primary-youtube)`;
+				return "var(--color-primary-youtube)";
 
 			default:
-				return css`currentColor`;
+				return "currentColor";
 		}
 	}};
 `;
@@ -31,10 +30,10 @@ export const Wrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 	border-radius: 0px 0px 5px 5px;
-	background-color: ${({ darkMode }) =>
-		darkMode === 1
-			? css`var(--dark-theme-bg-card-dark-blue)`
-			: css`var(--light-theme-bg-card-grayish-blue)`};
+	background-color: ${({ theme }) =>
+		theme.darkMode
+			? "var(--dark-theme-bg-card-dark-blue)"
+			: "var(--light-theme-bg-card-grayish-blue)"};
 
 	//max-width: 350px;
 	padding: 1rem;
@@ -44,10 +43,10 @@ export const Wrapper = styled.div`
 export const Title = styled.h1`
 	margin: 0;
 	font-size: 0.8rem;
-	color: ${({ darkMode }) =>
-		darkMode === 1
-			? css`var(--dark-theme-color-text-blue)`
-			: css`var(--light-theme-color-text-grayish-blue)`}; ;
+	color: ${({ theme }) =>
+		theme.darkMode
+			? "var(--dark-theme-color-text-blue)"
+			: "var(--light-theme-color-text-grayish-blue)"}; ;
 `;
 
 export const Stat = styled.div`
@@ -61,20 +60,20 @@ export const Number = styled.p`
 	margin: 0;
 	font-size: 3.6rem;
 	font-weight: 700;
-	color: ${({ darkMode }) =>
-		darkMode === 1
-			? css`var(--dark-theme-color-text-white)`
-			: css`var(--light-theme-color-text-dark-blue)`};
+	color: ${({ theme }) =>
+		theme.darkMode
+			? "var(--dark-theme-color-text-white)"
+			: "var(--light-theme-color-text-dark-blue)"};
 `;
 
 export const NumberUnit = styled.h1`
 	margin: 0;
 	font-size: 0.8rem;
 	font-weight: 400;
-	color: ${({ darkMode }) =>
-		darkMode === 1
-			? css`var(--dark-theme-color-text-blue)`
-			: css`var(--light-theme-color-text-grayish-blue)`}; ;
+	color: ${({ theme }) =>
+		theme.darkMode
+			? "var(--dark-theme-color-text-blue)"
+			: "var(--light-theme-color-text-grayish-blue)"}; ;
 `;
 
 export const Social = styled.div`
@@ -88,10 +87,10 @@ export const Username = styled.p`
 	margin: 0 0 0 0.3rem;
 	font-size: 0.8rem;
 	font-weight: 700;
-	color: ${({ darkMode }) =>
-		darkMode === 1
-			? css`var(--dark-theme-color-text-blue)`
-			: css`var(--light-theme-color-text-grayish-blue)`}; ;
+	color: ${({ theme }) =>
+		theme.darkMode
+			? "var(--dark-theme-color-text-blue)"
+			: "var(--light-theme-color-text-grayish-blue)"}; ;
 `;
 
 export const CardTendency = styled.div``;

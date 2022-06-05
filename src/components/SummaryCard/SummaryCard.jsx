@@ -12,16 +12,13 @@ import {
 	NumberUnit,
 	Social,
 	Stat,
-	Title,
 	Username,
 	Wrapper,
 } from "./SummaryCard.styles";
 
 function SummaryCard({
-	darkMode,
 	socialIcon,
 	username,
-	title,
 	number,
 	numberUnit,
 	value,
@@ -51,15 +48,13 @@ function SummaryCard({
 
 	return (
 		<BorderWrapper social={socialIcon}>
-			<Wrapper darkMode={darkMode}>
+			<Wrapper>
 				<Social>
-					{icon} <Username darkMode={darkMode}>{username}</Username>
+					{icon} <Username>{username}</Username>
 				</Social>
 				<Stat>
-					<Number darkMode={darkMode}>{number}</Number>
-					<NumberUnit darkMode={darkMode}>
-						{_.upperCase(numberUnit.split("").join(" "))}
-					</NumberUnit>
+					<Number>{number}</Number>
+					<NumberUnit>{_.upperCase(numberUnit.split("").join(" "))}</NumberUnit>
 				</Stat>
 				<CardTendency>
 					<Tendency value={value} valueUnit={` ${valueUnit}`} />

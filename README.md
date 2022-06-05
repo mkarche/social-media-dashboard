@@ -50,11 +50,16 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Cleaning Default React App files
 - Structuring the document
 - Setting up the gh pages deployment
-- Defining CSS variables
+- Defining CSS variables (in root index CSS file)
 - Creating utilities functions (responsive)
 - Sketching and Organizing the design
-- Creating and Styling components
-- Structuring and Styling the page
+- Creating and Styling components (for mobile: mobile first approach)
+- Structuring and Styling the page (for mobile: mobile first approach)
+- Populating Themes dark mode and light mode using React Context and Styled components theming Context Provider
+- Creating Grids layout (for mobile: mobile first approach)
+- Creating Responsive Layout (for Tablet and Desktop)
+- Creating JSON Data to populate contents
+- Deploying the Project on Github pages
 
 ### Built with
 
@@ -101,15 +106,109 @@ Example of Code as below:
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+#### Creating a Toggle Switch Button
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I learned how to create a customized Toggle Switch Button
+
+```jsx
+<CheckBoxWrapper>
+	<CheckBox
+		id="checkbox"
+		type="checkbox"
+		checked={darkMode}
+		onChange={() => {
+			setDarkMode(!darkMode);
+		}}
+	/>
+	<CheckBoxLabel htmlFor="checkbox" />
+</CheckBoxWrapper>
+```
+
+```js styled component
+export const CheckBoxWrapper = styled.div`
+	position: relative;
+`;
+
+export const CheckBoxLabel = styled.label`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 42px;
+	height: 26px;
+	border-radius: 15px;
+	background: var(--light-theme);
+	cursor: pointer;
+	&::after {
+		content: "";
+		display: block;
+		border-radius: 50%;
+		width: 18px;
+		height: 18px;
+		margin: 3px;
+		background: var(--light-theme-bg-white);
+		box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+		transition: 0.2s;
+	}
+`;
+
+export const CheckBox = styled.input`
+	opacity: 0;
+	z-index: 1;
+	border-radius: 15px;
+	width: 42px;
+	height: 26px;
+	&:checked + ${CheckBoxLabel} {
+		background: var(--dark-theme);
+		&::after {
+			content: "";
+			display: block;
+			border-radius: 50%;
+			width: 18px;
+			height: 18px;
+			margin-left: 21px;
+			background: var(--dark-theme-bg-dark-blue);
+			transition: 0.2s;
+		}
+	}
+`;
+```
+
+#### Using Theming with Styled Components
+
+I learned How to use Theme with Styled Components to ease the population of theming styles through all the styled components
+
+```jsx
+const theme = {
+	darkMode: darkMode,
+	setDarkMode: setDarkMode,
+};
+
+return (
+	<ThemeProvider theme={theme}>
+		<Container>
+			<Heading>
+				<Title>Social Media Dashboard</Title>
+				<Subtitle>Total Followers: 23,004</Subtitle>
+			</Heading>
+			..... ....
+		</Container>
+	</ThemeProvider>
+);
+```
+
+```js styled component
+export const Title = styled.h1`
+	margin: 0;
+	color: ${({ theme }) =>
+		theme.darkMode
+			? "var(--dark-theme-color-text-white)"
+			: "var(--light-theme-color-text-dark-blue)"};
+`;
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+For future projects I plan to focus on TypeScript and using CSS variables in JS styled components ($variable) instead of defining variables in css file (then using var(--css-variable))
 
 ### Useful resources
 

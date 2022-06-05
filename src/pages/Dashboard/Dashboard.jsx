@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { OverviewCard, SummaryCard, Tendency } from "../../components";
+import React, { createContext, useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { OverviewCard, SummaryCard, SwitchButton } from "../../components";
 import {
 	Container,
 	Heading,
@@ -8,75 +9,84 @@ import {
 	OverviewWrapper,
 	Subtitle,
 	SummaryWrapper,
-	Switch,
-	SwitchButton,
+	SwitchWrapper,
+	SwitchToggle,
 	SwitchText,
 	Title,
 } from "./Dashboard.styles";
 
+export const themeContext = createContext(null);
+
 function Dashboard() {
-	const [darkMode, setDarkMode] = useState(0);
-	//console.log();
+	const [darkMode, setDarkMode] = useState(false);
+	const theme = {
+		darkMode: darkMode,
+		setDarkMode: setDarkMode,
+	};
 	return (
-		<>
-			<Container>
-				<Heading>
-					<Title>Social Media Dashboard</Title>
-					<Subtitle>Total Followers: 23,004</Subtitle>
-				</Heading>
-				<Line />
-				<Switch>
-					<SwitchText>Dark Mode</SwitchText>
-					<SwitchButton></SwitchButton>
-				</Switch>
-				<SummaryWrapper>
-					<SummaryCard
-						darkMode={darkMode}
-						socialIcon="instagram"
-						username="@mkarche"
-						number={87}
-						numberUnit="followers"
-						value={3}
-						valueUnit="Today"
-					/>
-					<SummaryCard
-						darkMode={1}
-						socialIcon="facebook"
-						username="@mkarche"
-						number={87}
-						numberUnit="subscribers"
-						value={3}
-						valueUnit="Today"
-					/>
-				</SummaryWrapper>
-				<OverviewTitle>Overview - Today</OverviewTitle>
-				<OverviewWrapper>
-					<OverviewCard
-						darkMode={darkMode}
-						socialIcon="instagram"
-						title="Page views"
-						number={87}
-						value={3}
-						valueUnit="%"
-					/>
-					<OverviewCard
-						darkMode={1}
-						socialIcon="youtube"
-						title="Page views"
-						number={87}
-						value={3}
-						valueUnit="%"
-					/>
-				</OverviewWrapper>
-			</Container>
-			<div class="attribution">
-				Challenge by{" "}
-				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-					Frontend Mentor
-				</a>
-				. Coded by <a href="#">Med Karche</a>.
-			</div>
-		</>
+		<themeContext.Provider value={theme}>
+			<ThemeProvider theme={theme}>
+				<Container>
+					<Heading>
+						<Title>Social Media Dashboard</Title>
+						<Subtitle>Total Followers: 23,004</Subtitle>
+					</Heading>
+					<Line />
+					<SwitchWrapper>
+						<SwitchText>Dark Mode</SwitchText>
+						<SwitchToggle>
+							<SwitchButton />
+						</SwitchToggle>
+					</SwitchWrapper>
+					<SummaryWrapper>
+						<SummaryCard
+							socialIcon="instagram"
+							username="@mkarche"
+							number={87}
+							numberUnit="followers"
+							value={3}
+							valueUnit="Today"
+						/>
+						<SummaryCard
+							socialIcon="facebook"
+							username="@mkarche"
+							number={87}
+							numberUnit="subscribers"
+							value={3}
+							valueUnit="Today"
+						/>
+					</SummaryWrapper>
+					<OverviewTitle>Overview - Today</OverviewTitle>
+					<OverviewWrapper>
+						<OverviewCard
+							socialIcon="instagram"
+							title="Page views"
+							number={87}
+							value={3}
+							valueUnit="%"
+						/>
+						<OverviewCard
+							socialIcon="youtube"
+							title="Page views"
+							number={87}
+							value={3}
+							valueUnit="%"
+						/>
+					</OverviewWrapper>
+				</Container>
+				<div className="attribution">
+					Challenge by{" "}
+					<a
+						href="https://www.frontendmentor.io?ref=challenge"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Frontend Mentor
+					</a>
+					. Coded by <a href="https://github.com/mkarche/">Med Karche</a>.
+				</div>
+			</ThemeProvider>
+		</themeContext.Provider>
 	);
 }
 
