@@ -23,19 +23,19 @@ function OverviewCard({
 	let icon = "";
 	switch (socialIcon) {
 		case "facebook":
-			icon = <FacebookIcon />;
+			icon = <FacebookIcon width={20} height={20} />;
 			break;
 
 		case "instagram":
-			icon = <InstagramIcon />;
+			icon = <InstagramIcon width={20} height={20} />;
 			break;
 
 		case "twitter":
-			icon = <TwitterIcon />;
+			icon = <TwitterIcon width={20} height={20} />;
 			break;
 
 		case "youtube":
-			icon = <YoutubeIcon />;
+			icon = <YoutubeIcon width={20} height={20} />;
 			break;
 
 		default:

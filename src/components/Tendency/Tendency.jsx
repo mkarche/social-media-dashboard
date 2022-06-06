@@ -8,7 +8,7 @@ function Tendency({ value, valueUnit }) {
 		<Wrapper>
 			<Icon>{Number(value) > 0 ? <IconUp /> : <IconDown />}</Icon>
 			<Value value={value}>
-				{value}
+				{Math.abs(value)}
 				{valueUnit}
 			</Value>
 		</Wrapper>

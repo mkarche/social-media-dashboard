@@ -1,0 +1,93 @@
+export const summaryCards = [
+	{
+		id: 1,
+		social: "facebook",
+		username: "@nathanf",
+		stat: "1987",
+		statUnit: "followers",
+		today: 12,
+	},
+	{
+		id: 2,
+		social: "twitter",
+		username: "@nathanf",
+		stat: "1044",
+		statUnit: "followers",
+		today: 99,
+	},
+	{
+		id: 3,
+		social: "instagram",
+		username: "@realnathanf",
+		stat: "11k",
+		statUnit: "followers",
+		today: 1099,
+	},
+	{
+		id: 4,
+		social: "youtube",
+		username: "Nathan F.",
+		stat: "8239",
+		statUnit: "subscribers",
+		today: 144,
+	},
+];
+
+export const overviewCards = [
+	{
+		id: 1,
+		social: "facebook",
+		stat: "87",
+		statUnit: "Page Views",
+		percentageVariation: 3,
+	},
+	{
+		id: 2,
+		social: "facebook",
+		stat: "52",
+		statUnit: "Likes",
+		percentageVariation: -2,
+	},
+	{
+		id: 3,
+		social: "instagram",
+		stat: "5462",
+		statUnit: "Likes",
+		percentageVariation: 2257,
+	},
+	{
+		id: 4,
+		social: "instagram",
+		stat: "52k",
+		statUnit: "Profile Views",
+		percentageVariation: 1375,
+	},
+	{
+		id: 5,
+		social: "twitter",
+		stat: "117",
+		statUnit: "Retweets",
+		percentageVariation: 303,
+	},
+	{
+		id: 6,
+		social: "twitter",
+		stat: 507,
+		statUnit: "Likes",
+		percentageVariation: 553,
+	},
+	{
+		id: 7,
+		social: "youtube",
+		stat: 107,
+		statUnit: "Likes",
+		percentageVariation: -19,
+	},
+	{
+		id: 8,
+		social: "youtube",
+		stat: 1407,
+		statUnit: "Total Views",
+		percentageVariation: -12,
+	},
+];

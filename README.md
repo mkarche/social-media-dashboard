@@ -73,6 +73,19 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
+#### Usage of Grids
+
+I Learned how to use grid for layout and responsiveness
+
+#### Usage of SVG image
+
+I learned how to import and resize SVG images.
+
+```js
+import { ReactComponent as TwitterIcon } from "../../images/icon-twitter.svg";
+<TwitterIcon width={20} height={20} fill="orange" />;
+```
+
 #### Creating card borders with linear-gradient color.
 
 I learned how to create a box borders with linear-gradient color.
@@ -108,7 +121,9 @@ Example of Code as below:
 
 #### Creating a Toggle Switch Button
 
-I learned how to create a customized Toggle Switch Button
+I learned how to create a customized Toggle Switch Button.
+
+NB: It was very challenging to create the Toggle Switch button, I tried with AntDesign and Material UI components, but found limitations for customizing components; So I end up creating my own Toggle Switch button based on some google research.
 
 ```jsx
 <CheckBoxWrapper>

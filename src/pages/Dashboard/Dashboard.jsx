@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { OverviewCard, SummaryCard, SwitchButton } from "../../components";
+import { overviewCards, summaryCards } from "../../data";
 import {
 	Container,
 	Heading,
@@ -39,52 +40,42 @@ function Dashboard() {
 						</SwitchToggle>
 					</SwitchWrapper>
 					<SummaryWrapper>
-						<SummaryCard
-							socialIcon="instagram"
-							username="@mkarche"
-							number={87}
-							numberUnit="followers"
-							value={3}
-							valueUnit="Today"
-						/>
-						<SummaryCard
-							socialIcon="facebook"
-							username="@mkarche"
-							number={87}
-							numberUnit="subscribers"
-							value={3}
-							valueUnit="Today"
-						/>
+						{summaryCards.map((card) => (
+							<SummaryCard
+								key={card.id}
+								socialIcon={card.social}
+								username={card.username}
+								number={card.stat}
+								numberUnit={card.statUnit}
+								value={card.today}
+								valueUnit="Today"
+							/>
+						))}
 					</SummaryWrapper>
 					<OverviewTitle>Overview - Today</OverviewTitle>
 					<OverviewWrapper>
-						<OverviewCard
-							socialIcon="instagram"
-							title="Page views"
-							number={87}
-							value={3}
-							valueUnit="%"
-						/>
-						<OverviewCard
-							socialIcon="youtube"
-							title="Page views"
-							number={87}
-							value={3}
-							valueUnit="%"
-						/>
+						{overviewCards.map((card) => (
+							<OverviewCard
+								socialIcon={card.social}
+								title={card.statUnit}
+								number={card.stat}
+								value={card.percentageVariation}
+								valueUnit="%"
+							/>
+						))}
 					</OverviewWrapper>
+					<div className="attribution">
+						Challenge by{" "}
+						<a
+							href="https://www.frontendmentor.io?ref=challenge"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Frontend Mentor
+						</a>
+						. Coded by <a href="https://github.com/mkarche/">Med Karche</a>.
+					</div>
 				</Container>
-				<div className="attribution">
-					Challenge by{" "}
-					<a
-						href="https://www.frontendmentor.io?ref=challenge"
-						target="_blank"
-						rel="noreferrer"
-					>
-						Frontend Mentor
-					</a>
-					. Coded by <a href="https://github.com/mkarche/">Med Karche</a>.
-				</div>
 			</ThemeProvider>
 		</themeContext.Provider>
 	);
