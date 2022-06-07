@@ -16,8 +16,6 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -30,20 +28,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+./screenshot-dark-theme.jpg
+./screenshot-light-theme.jpg
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/mkarche/social-media-dashboard]
+- Live Site URL: [https://mkarche.github.io/social-media-dashboard]
 
 ## My process
 
@@ -223,7 +214,7 @@ export const Title = styled.h1`
 
 ### Continued development
 
-For future projects I plan to focus on TypeScript and using CSS variables in JS styled components ($variable) instead of defining variables in css file (then using var(--css-variable))
+For future projects I plan to focus on TypeScript and on using CSS variables in JS styled components theme instead of defining variables in css file (then using var(--css-variable))
 
 ### Useful resources
 
