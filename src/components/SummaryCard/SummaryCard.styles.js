@@ -38,6 +38,11 @@ export const Wrapper = styled.div`
 	//max-width: 350px;
 	padding: 1rem;
 	gap: 1rem;
+	&:hover {
+		cursor: pointer;
+		filter: ${({ theme }) =>
+			theme.darkMode ? "brightness(140%)" : "brightness(95%)"};
+	}
 `;
 
 export const Title = styled.h1`
@@ -46,7 +51,7 @@ export const Title = styled.h1`
 	color: ${({ theme }) =>
 		theme.darkMode
 			? "var(--dark-theme-color-text-blue)"
-			: "var(--light-theme-color-text-grayish-blue)"}; ;
+			: "var(--light-theme-color-text-grayish-blue)"};
 `;
 
 export const Stat = styled.div`
